@@ -1,0 +1,9 @@
+insightface~=0.7.3
+onnxruntime~=1.22.0
+Pillow~=11.2.1
+numpy~=1.24.3
+fastapi~=0.115.12
+pandas~=2.2.3
+uvicorn~=0.34.2
+psycopg[pool]~=3.2.1
+

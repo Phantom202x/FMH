@@ -1,0 +1,48 @@
+# Ignore Python cache and compiled files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Ignore virtual environments
+venv/
+env/
+onnx-env/
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore logs and temp files
+*.log
+*.tmp
+
+# Ignore model and data files
+*.onnx
+*.zip
+*.pkl
+*.pt
+*.h5
+*.npz
+*.npy
+
+# Ignore IDE/project files
+.vscode/
+.idea/
+
+# Ignore Docker-related artifacts
+*.tar
+*.bak
+
+# Ignore environment files
+.env
+.env.*
+
+# Ignore node_modules if ever used
+node_modules/
+
+# Ignore build artifacts
+build/
+dist/
+*.egg-info/
+ 

@@ -1,0 +1,85 @@
+services:
+
+  db:
+    image: postgres:14-alpine
+    restart: always
+    ports:
+      - "5432:5432"
+
+    volumes:
+    - db-data:/var/lib/postgresql/data
+
+    environment:
+      POSTGRES_DB: fmh
+      POSTGRES_USER: fmh
+      POSTGRES_PASSWORD: fmh123
+
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "fmh"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  setup-db:
+    image: postgres:14-alpine
+    entrypoint: ["/bin/bash", "/scripts/setup_db_tables_if_dont_exist.sh"]
+    
+    environment:
+      PGHOST: db
+      PGPORT: "5432"
+      PGDATABASE: fmh
+      PGUSER: fmh
+      PGPASSWORD: fmh123
+    
+    volumes:
+      - ./backend/schemas:/db-schemas:ro 
+      - ./backend/scripts:/scripts:ro
+ 
+    depends_on:
+      db:
+        condition: service_healthy
+
+  server:  
+    build:
+      context: .
+      dockerfile: ./backend/Dockerfile
+
+    ports:
+      - "8000:8000"
+    
+    environment:
+      PGHOST: db
+      PGPORT: "5432"
+      PGDATABASE: fmh
+      PGUSER: fmh
+      PGPASSWORD: fmh123
+    
+    healthcheck:
+      test: ["CMD", "curl", "-sf", "http://127.0.0.1:8000/v1/fmh/internal/ready"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    
+    depends_on:
+      db:
+        condition: service_healthy
+      setup-db:
+        condition: service_completed_successfully
+  
+  test-server:
+    profiles: ["tests"]
+    build:
+      context: .
+      dockerfile: ./backend/Dockerfile
+    
+    command: ["python3", "/scripts/test-backend.py"]
+    
+    environment:
+      DEFAULT_API_URL: "http://server:8000"
+
+    volumes:
+      - ./backend/scripts:/scripts/:ro
+
+
+volumes:
+  db-data:
