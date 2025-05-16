@@ -1,4 +1,5 @@
 import 'package:app/components/user_card.dart';
+import 'package:app/l10n/app_localizations.dart';
 import 'package:app/services/auth_services.dart';
 import 'package:app/services/face_scan_services.dart';
 import 'package:app/services/notification_services.dart';
@@ -8,7 +9,6 @@ import 'package:app/views/report_views/report_list_view.dart';
 import 'package:app/views/settings_views/settings_view.dart';
 import 'package:app/views/face_scan_views/face_scan_view.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 
 class MainAppView extends StatefulWidget {

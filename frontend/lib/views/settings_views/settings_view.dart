@@ -1,10 +1,10 @@
+import 'package:app/l10n/app_localizations.dart';
 import 'package:app/services/auth_services.dart';
 import 'package:app/viewmodels/auth_viewmodels/auth_bloc.dart';
 import 'package:app/views/settings_views/languages_view.dart';
 import 'package:app/views/settings_views/profile_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SettingsView extends StatefulWidget {
   const SettingsView({super.key});

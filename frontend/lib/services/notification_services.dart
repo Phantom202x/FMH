@@ -1,10 +1,10 @@
+import 'package:app/l10n/app_localizations.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:app/views/report_views/full_report_view.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class NotificationServices {
   final notificationPlugin = FlutterLocalNotificationsPlugin();

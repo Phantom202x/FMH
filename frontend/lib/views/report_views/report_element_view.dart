@@ -1,7 +1,7 @@
+import 'package:app/l10n/app_localizations.dart';
 import 'package:app/models/report_models.dart';
 import 'package:app/views/report_views/full_report_view.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ReportViewElement extends StatelessWidget {
   final Report report;

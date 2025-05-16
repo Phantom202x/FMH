@@ -1,3 +1,4 @@
+import 'package:app/l10n/app_localizations.dart';
 import 'package:app/services/auth_services.dart';
 import 'package:app/services/notification_services.dart';
 import 'package:app/services/settings_services.dart';
@@ -12,7 +13,6 @@ import 'package:app/views/auth_views/welcome_view.dart';
 import 'package:app/views/report_views/report_creation_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 Future<void> main() async {

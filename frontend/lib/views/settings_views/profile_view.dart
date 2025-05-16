@@ -1,8 +1,9 @@
+import 'package:app/l10n/app_localizations.dart';
 import 'package:app/viewmodels/auth_viewmodels/auth_bloc.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 class ProfileView extends StatefulWidget {
   final Map<String, dynamic> userInfo;
   const ProfileView({required this.userInfo, super.key});

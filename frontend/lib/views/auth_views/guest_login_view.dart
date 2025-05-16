@@ -1,11 +1,11 @@
 import 'package:app/components/hadj_input.dart';
+import 'package:app/l10n/app_localizations.dart';
 import 'package:app/viewmodels/app_viewmodels/app_bloc.dart';
 import 'package:app/viewmodels/auth_viewmodels/auth_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:country_picker/country_picker.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class GuestLoginView extends StatefulWidget {
   const GuestLoginView({super.key});
@@ -23,7 +23,7 @@ class _GuestLoginViewState extends State<GuestLoginView> {
   TextEditingController nameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
   TextEditingController phoneController = TextEditingController();
-  TextEditingController nationality_Controller = TextEditingController();
+  TextEditingController nationalityController = TextEditingController();
   String nationality = "";
 
   @override
@@ -110,11 +110,11 @@ class _GuestLoginViewState extends State<GuestLoginView> {
                       context: context,
                       onSelect: (Country country) => setState(() {
                         nationality = country.name;
-                        nationality_Controller.text = country.name;
+                        nationalityController.text = country.name;
                       }),
                     ),
                     hinttext: l10n.nationality,
-                    controller: nationality_Controller,
+                    controller: nationalityController,
                     icon: Icon(
                       Icons.flag_outlined,
                     ),
@@ -159,7 +159,7 @@ class _GuestLoginViewState extends State<GuestLoginView> {
                               "full_name": nameController.text,
                               "email": emailController.text,
                               "phone": phoneController.text,
-                              "nationality": nationality_Controller.text,
+                              "nationality": nationalityController.text,
                             },
                           ),
                         );

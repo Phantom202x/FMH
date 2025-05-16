@@ -1,9 +1,9 @@
 
 import 'package:app/components/hadj_input.dart';
+import 'package:app/l10n/app_localizations.dart';
 import 'package:app/search_bar/search_engine.dart';
 import 'package:country_picker/country_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ReportCreationView extends StatefulWidget {
   const ReportCreationView({super.key});
@@ -17,7 +17,7 @@ class _ReportCreationViewState extends State<ReportCreationView> {
 
   TextEditingController nameController = TextEditingController();
   TextEditingController phoneController = TextEditingController();
-  TextEditingController nationality_Controller = TextEditingController();
+  TextEditingController nationalityController = TextEditingController();
   String nationality = "";
 
   @override
@@ -63,11 +63,11 @@ class _ReportCreationViewState extends State<ReportCreationView> {
                       context: context,
                       onSelect: (Country country) => setState(() {
                         nationality = country.name;
-                        nationality_Controller.text = country.name;
+                        nationalityController.text = country.name;
                       }),
                     ),
                   hinttext: l10n.nationality,
-                  controller: nationality_Controller,
+                  controller: nationalityController,
                   icon: Icon(Icons.flag_outlined),  
                   validator: (value) {
                       if (value == null || value.isEmpty) {
@@ -93,7 +93,7 @@ class _ReportCreationViewState extends State<ReportCreationView> {
                   Navigator.of(context).push(
                               MaterialPageRoute(
                                   builder: (context) =>SearchEngine(
-                                    nationality:nationality_Controller.text,
+                                    nationality:nationalityController.text,
                                     fullname:nameController.text,
                                     phonenumber:phoneController.text,
                                     )),

@@ -1,10 +1,10 @@
+import 'package:app/l10n/app_localizations.dart';
 import 'package:app/viewmodels/app_viewmodels/app_bloc.dart';
 import 'package:app/views/auth_views/login_choice.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:video_player/video_player.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class WelcomeView extends StatefulWidget {
   const WelcomeView({super.key});

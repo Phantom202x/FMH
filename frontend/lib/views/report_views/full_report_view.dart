@@ -1,8 +1,8 @@
 import 'dart:io';
+import 'package:app/l10n/app_localizations.dart';
 import 'package:app/services/face_scan_services.dart';
 import 'package:app/views/face_scan_views/face_scan_view.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class FullReportView extends StatelessWidget {

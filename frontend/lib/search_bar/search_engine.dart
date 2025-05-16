@@ -1,10 +1,10 @@
 
 import 'package:app/components/user_card.dart';
+import 'package:app/l10n/app_localizations.dart';
 import 'package:app/services/auth_services.dart';
 import 'package:app/services/report_services.dart';
 import 'package:flutter/material.dart';
 import 'package:app/models/report_models.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 class SearchEngine extends StatefulWidget {

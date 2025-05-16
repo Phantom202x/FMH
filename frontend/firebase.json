@@ -1,0 +1,44 @@
+{
+  "emulators": {
+    "apphosting": {
+      "port": 8888,
+      "rootDirectory": "frontend"
+    },
+    "auth": {
+      "port": 8000
+    },
+    "functions": {
+      "port": 8001
+    },
+    "firestore": {
+      "port": 8002
+    },
+    "database": {
+      "port": 8003
+    },
+    "hosting": {
+      "port": 8004
+    },
+    "pubsub": {
+      "port": 8005
+    },
+    "storage": {
+      "port": 8006
+    },
+    "eventarc": {
+      "port": 8007
+    },
+    "dataconnect": {
+      "port": 8009,
+      "dataDir": "dataconnect/.dataconnect/pgliteData"
+    },
+    "tasks": {
+      "port": 8009
+    },
+    "ui": {
+      "enabled": true,
+      "port": 8010
+    },
+    "singleProjectMode": true
+  }
+}

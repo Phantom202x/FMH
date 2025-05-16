@@ -1,8 +1,8 @@
 import 'package:app/components/hadj_input.dart';
+import 'package:app/l10n/app_localizations.dart';
 import 'package:app/views/app_views/main_view.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class PasswordConfirm extends StatefulWidget {
   const PasswordConfirm({super.key});
@@ -12,8 +12,8 @@ class PasswordConfirm extends StatefulWidget {
 }
 
 class _PasswordConfirmState extends State<PasswordConfirm> {
-  final TextEditingController password_controller = TextEditingController();
-  final TextEditingController confirm_password_controller =
+  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController confirmPasswordController =
       TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -38,7 +38,7 @@ class _PasswordConfirmState extends State<PasswordConfirm> {
               SizedBox(height: 40),
               HadjInput(
                 hinttext: 'Password',
-                controller: password_controller,
+                controller: passwordController,
                 isPassword: true,
                 icon: Icon(Icons.remove_red_eye_outlined),
                 validator: (value) {
@@ -51,7 +51,7 @@ class _PasswordConfirmState extends State<PasswordConfirm> {
               SizedBox(height: 20),
               HadjInput(
                 hinttext: 'Confirm Password',
-                controller: confirm_password_controller,
+                controller: confirmPasswordController,
                 isPassword: true,
                 icon: Icon(Icons.remove_red_eye_outlined),
                 validator: (value) {
@@ -67,8 +67,8 @@ class _PasswordConfirmState extends State<PasswordConfirm> {
                 height: 51,
                 child: ElevatedButton(
                   onPressed: () {
-                    if (password_controller.text ==
-                        confirm_password_controller.text) {
+                    if (passwordController.text ==
+                        confirmPasswordController.text) {
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => MainAppView()),

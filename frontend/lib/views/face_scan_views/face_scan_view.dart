@@ -1,7 +1,7 @@
 import 'dart:io';
+import 'package:app/l10n/app_localizations.dart';
 import 'package:app/services/face_scan_services.dart';
 import 'package:app/views/report_views/full_report_view.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 
 class FaceScanView extends StatefulWidget {
@@ -108,7 +108,7 @@ class _FaceScanViewState extends State<FaceScanView> {
               margin: const EdgeInsets.symmetric(horizontal: 20),
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: Colors.green.withOpacity(0.3),
+                color: Colors.green.withAlpha(76),
                 borderRadius: BorderRadius.circular(8),
               ),
               width: 300,
